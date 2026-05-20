@@ -36,7 +36,7 @@ const projects = [
   },
   {
     title: 'Portfolio Website',
-    desc: 'This portfolio — built with React, Vite, Tailwind CSS with clean minimalist design and smooth interactions.',
+    desc: 'This portfolio — built with React, Vite, and Tailwind CSS with clean minimalist design and smooth interactions.',
     tags: ['React', 'Vite', 'Tailwind', 'Typography'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
@@ -49,10 +49,15 @@ export default function Projects() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add('visible');
+        }),
       { threshold: 0.08 }
     );
+
     if (ref.current) observer.observe(ref.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -60,42 +65,50 @@ export default function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-28 px-6 border-t border-black/10">
+    <section
+      id="projects"
+      className="py-20 md:py-28 px-4 md:px-6 border-t border-black/10 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto">
         <div ref={ref} className="fade-in">
-          <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-4">Projects</p>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+          <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-4">
+            Projects
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight break-words">
             Things I've Built
           </h2>
-          <p className="text-lg text-black/60 max-w-2xl mb-16">
+
+          <p className="text-base md:text-lg text-black/60 max-w-2xl mb-12 md:mb-16">
             A collection of projects exploring security, cloud, and full-stack development.
           </p>
 
-          {/* Featured projects */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
             {featured.map((p) => (
               <div
                 key={p.title}
-                className="group bg-card bg-card-hover rounded-lg p-7"
+                className="group bg-card bg-card-hover rounded-lg p-5 md:p-7 overflow-hidden break-words"
               >
-                <h3 className="text-lg font-black mb-3 group-hover:opacity-60 transition-opacity">
+                <h3 className="text-lg font-black mb-3 group-hover:opacity-60 transition-opacity break-words">
                   {p.title}
                 </h3>
 
-                <p className="text-black/70 text-sm leading-relaxed mb-5">{p.desc}</p>
+                <p className="text-black/70 text-sm leading-relaxed mb-5 break-words">
+                  {p.desc}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-5">
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-full text-xs font-bold bg-black/5 border border-black/10 text-black"
+                      className="px-2.5 py-1 rounded-full text-xs font-bold bg-black/5 border border-black/10 text-black break-words"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href={p.github}
                     target="_blank"
@@ -104,6 +117,7 @@ export default function Projects() {
                   >
                     <Github size={13} /> Code
                   </a>
+
                   <a
                     href={p.live}
                     target="_blank"
@@ -117,32 +131,47 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Other projects */}
-          <div className="grid sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {rest.map((p) => (
               <div
                 key={p.title}
-                className="group bg-card bg-card-hover rounded-lg p-6"
+                className="group bg-card bg-card-hover rounded-lg p-5 md:p-6 overflow-hidden break-words"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-base font-black group-hover:opacity-60 transition-opacity">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="text-base font-black group-hover:opacity-60 transition-opacity break-words">
                     {p.title}
                   </h3>
-                  <div className="flex items-center gap-3">
-                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+
+                  <div className="flex items-center gap-3 shrink-0">
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black/60 hover:text-black transition-colors"
+                    >
                       <Github size={15} />
                     </a>
-                    <a href={p.live} target="_blank" rel="noopener noreferrer" className="text-black/60 hover:text-black transition-colors">
+
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black/60 hover:text-black transition-colors"
+                    >
                       <ExternalLink size={15} />
                     </a>
                   </div>
                 </div>
-                <p className="text-sm text-black/70 leading-relaxed mb-4">{p.desc}</p>
+
+                <p className="text-sm text-black/70 leading-relaxed mb-4 break-words">
+                  {p.desc}
+                </p>
+
                 <div className="flex flex-wrap gap-2">
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full bg-black/5 border border-black/10 font-bold text-black"
+                      className="text-xs px-2.5 py-1 rounded-full bg-black/5 border border-black/10 font-bold text-black break-words"
                     >
                       {tag}
                     </span>
@@ -152,13 +181,12 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* GitHub CTA */}
           <div className="mt-12 text-center">
             <a
               href="https://github.com/pvsrinivas"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-black text-black font-bold text-sm hover:bg-black hover:text-white transition-all"
+              className="inline-flex flex-wrap items-center justify-center gap-2 px-5 md:px-6 py-3 rounded-lg border-2 border-black text-black font-bold text-sm hover:bg-black hover:text-white transition-all"
             >
               <Github size={16} />
               View All Projects on GitHub
