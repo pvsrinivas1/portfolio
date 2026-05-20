@@ -4,7 +4,7 @@ import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 const projects = [
   {
     title: 'AI Voice Assistant',
-    desc: 'Intelligent voice-activated assistant using NLP and speech recognition with multi-intent parsing and real-time responses.',
+    desc: 'Intelligent voice-activated assistant using NLP and speech recognition.',
     tags: ['Python', 'NLP', 'Speech Recognition', 'Google Cloud'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
@@ -12,32 +12,32 @@ const projects = [
   },
   {
     title: 'Cloud Security Dashboard',
-    desc: 'Centralized monitoring dashboard for AWS/GCP environments with IAM misconfigurations visualization and real-time alerting.',
-    tags: ['AWS', 'GCP', 'React', 'Security', 'Dashboard'],
+    desc: 'Centralized monitoring dashboard for AWS/GCP environments.',
+    tags: ['AWS', 'GCP', 'React', 'Security'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
     featured: true,
   },
   {
     title: 'Password Strength Analyzer',
-    desc: 'Advanced password security tool with entropy analysis, breach database checks, and actionable hardening suggestions.',
-    tags: ['Python', 'Security', 'API', 'Cryptography'],
+    desc: 'Advanced password security tool with entropy analysis.',
+    tags: ['Python', 'Security', 'Cryptography'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
     featured: true,
   },
   {
     title: 'Network Scanner',
-    desc: 'Powerful network reconnaissance tool for subnet scanning, port detection, service fingerprinting, and vulnerability reporting.',
-    tags: ['Python', 'Networking', 'Nmap', 'Security'],
+    desc: 'Network reconnaissance tool for subnet and port scanning.',
+    tags: ['Python', 'Networking', 'Nmap'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
     featured: false,
   },
   {
     title: 'Portfolio Website',
-    desc: 'This portfolio — built with React, Vite, and Tailwind CSS with clean minimalist design and smooth interactions.',
-    tags: ['React', 'Vite', 'Tailwind', 'Typography'],
+    desc: 'Portfolio built using React, Vite, and Tailwind CSS.',
+    tags: ['React', 'Vite', 'Tailwind'],
     github: 'https://github.com/pvsrinivas',
     live: '#',
     featured: false,
@@ -75,7 +75,7 @@ export default function Projects() {
             Projects
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight break-words">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
             Things I've Built
           </h2>
 
@@ -87,9 +87,9 @@ export default function Projects() {
             {featured.map((p) => (
               <div
                 key={p.title}
-                className="group bg-card bg-card-hover rounded-lg p-5 md:p-7 overflow-hidden break-words"
+                className="group bg-card bg-card-hover rounded-lg p-5 md:p-7 overflow-hidden"
               >
-                <h3 className="text-lg font-black mb-3 group-hover:opacity-60 transition-opacity break-words">
+                <h3 className="text-lg font-black mb-3 break-words">
                   {p.title}
                 </h3>
 
@@ -101,7 +101,7 @@ export default function Projects() {
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-full text-xs font-bold bg-black/5 border border-black/10 text-black break-words"
+                      className="px-2.5 py-1 rounded-full text-xs font-bold bg-black/5 border border-black/10 text-black"
                     >
                       {tag}
                     </span>
@@ -113,7 +113,7 @@ export default function Projects() {
                     href={p.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-bold text-black hover:opacity-60 transition-opacity"
+                    className="flex items-center gap-1.5 text-xs font-bold text-black"
                   >
                     <Github size={13} /> Code
                   </a>
@@ -122,7 +122,7 @@ export default function Projects() {
                     href={p.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-bold text-black hover:opacity-60 transition-opacity"
+                    className="flex items-center gap-1.5 text-xs font-bold text-black"
                   >
                     <ExternalLink size={13} /> Live <ArrowUpRight size={11} />
                   </a>
@@ -135,10 +135,10 @@ export default function Projects() {
             {rest.map((p) => (
               <div
                 key={p.title}
-                className="group bg-card bg-card-hover rounded-lg p-5 md:p-6 overflow-hidden break-words"
+                className="group bg-card bg-card-hover rounded-lg p-5 md:p-6 overflow-hidden"
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="text-base font-black group-hover:opacity-60 transition-opacity break-words">
+                  <h3 className="text-base font-black break-words">
                     {p.title}
                   </h3>
 
@@ -147,7 +147,6 @@ export default function Projects() {
                       href={p.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black/60 hover:text-black transition-colors"
                     >
                       <Github size={15} />
                     </a>
@@ -156,7 +155,6 @@ export default function Projects() {
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black/60 hover:text-black transition-colors"
                     >
                       <ExternalLink size={15} />
                     </a>
@@ -171,7 +169,7 @@ export default function Projects() {
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full bg-black/5 border border-black/10 font-bold text-black break-words"
+                      className="text-xs px-2.5 py-1 rounded-full bg-black/5 border border-black/10 font-bold text-black"
                     >
                       {tag}
                     </span>
@@ -193,6 +191,7 @@ export default function Projects() {
               <ArrowUpRight size={14} />
             </a>
           </div>
+
         </div>
       </div>
     </section>
