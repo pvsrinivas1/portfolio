@@ -53,7 +53,7 @@ export default function Footer() {
               {[
                 { href: 'https://github.com/pvsrinivas', icon: <Github size={16} />, label: 'GitHub' },
                 { href: 'https://linkedin.com/in/pvsrinivas', icon: <Linkedin size={16} />, label: 'LinkedIn' },
-                { href: 'mailto:pvsrinivas@example.com', icon: <Mail size={16} />, label: 'Email' },
+                { href: 'mailto:pvsrinivas@outlook.in', icon: <Mail size={16} />, label: 'Email' },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -67,7 +67,7 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-4 text-black/60 text-xs font-bold">pvsrinivas@example.com</p>
+            <p className="mt-4 text-black/60 text-xs font-bold">pvsrinivas@outlook.in</p>
           </div>
         </div>
 
@@ -76,7 +76,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} PV Srinivas. All rights reserved.
           </p>
           <p className="text-black/40 text-xs font-bold">
-            Built with React, Vite & Tailwind CSS
+            JUST A TECH
           </p>
         </div>
       </div>
