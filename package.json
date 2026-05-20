@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "workspaces": ["src"],
+  "scripts": {
+    "dev": "npm --workspace ./src run dev",
+    "build": "npm --workspace ./src run build",
+    "preview": "npm --workspace ./src run preview",
+    "lint": "npm --workspace ./src run lint",
+    "typecheck": "npm --workspace ./src run typecheck"
+  }
+}
