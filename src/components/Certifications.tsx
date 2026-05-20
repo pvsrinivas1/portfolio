@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Award, ExternalLink, CheckCircle } from 'lucide-react';
+import { Award, ExternalLink, CheckCircle } from 'lucide-react'; 
 
 const certifications = [
   {
