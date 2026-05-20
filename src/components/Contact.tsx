@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
+import { MapPin, Send, Github, Linkedin, MessageSquare } from 'lucide-react';
 
 const socials = [
   {
@@ -14,24 +14,26 @@ const socials = [
     href: 'https://linkedin.com/in/pv-srinivas',
     icon: Linkedin,
   },
-  {
-    label: 'Email',
-    value: 'srinivaspv678@gmail.com',
-    href: 'mailto:srinivaspv678@gmail.com',
-    icon: Mail,
-  },
 ];
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add('visible');
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
         }),
       { threshold: 0.1 }
     );
@@ -44,7 +46,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const subject = encodeURIComponent(`Portfolio message from ${form.name}`);
+    const subject = encodeURIComponent(
+      `Portfolio message from ${form.name}`
+    );
+
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
     );
@@ -52,7 +57,13 @@ export default function Contact() {
     window.location.href = `mailto:srinivaspv678@gmail.com?subject=${subject}&body=${body}`;
 
     setSent(true);
-    setForm({ name: '', email: '', message: '' });
+
+    setForm({
+      name: '',
+      email: '',
+      message: '',
+    });
+
     setTimeout(() => setSent(false), 4000);
   };
 
@@ -61,8 +72,9 @@ export default function Contact() {
       id="contact"
       className="py-20 md:py-28 px-4 md:px-6 border-t border-black/10 overflow-hidden"
     >
-      <div className="max-w-5xl mx-auto relative">
+      <div className="max-w-5xl mx-auto">
         <div ref={ref} className="fade-in">
+
           <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-4">
             Contact
           </p>
@@ -76,20 +88,24 @@ export default function Contact() {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-2 flex flex-col gap-5 min-w-0">
-              <div className="bg-card rounded-lg p-5 md:p-7 overflow-hidden break-words">
+
+            {/* Left Side */}
+            <div className="lg:col-span-2 flex flex-col gap-5">
+
+              <div className="bg-card rounded-lg p-5 md:p-7 overflow-hidden">
                 <div className="flex items-center gap-3 mb-5">
-                  <MessageSquare size={18} className="shrink-0" />
+                  <MessageSquare size={18} />
                   <h3 className="font-black">Get in touch</h3>
                 </div>
 
-                <p className="text-black/70 text-sm leading-relaxed mb-6 break-words">
-                  Whether you have a project idea, an opportunity, or just want to chat about cloud security — my inbox is always open.
+                <p className="text-black/70 text-sm leading-relaxed mb-6">
+                  Whether you have a project idea, an opportunity, or just want
+                  to chat about cloud security — my inbox is always open.
                 </p>
 
                 <div className="flex items-center gap-2 text-black/70 text-sm">
-                  <MapPin size={14} className="shrink-0" />
-                  <span className="break-words">India · Open to Remote</span>
+                  <MapPin size={14} />
+                  <span>India · Open to Remote</span>
                 </div>
               </div>
 
@@ -102,18 +118,18 @@ export default function Contact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-card bg-card-hover rounded-lg p-4 flex items-center gap-4 overflow-hidden break-words"
+                    className="bg-card bg-card-hover rounded-lg p-4 flex items-center gap-4 overflow-hidden"
                   >
                     <div className="w-10 h-10 rounded-lg bg-black text-white flex items-center justify-center shrink-0">
                       <Icon size={16} />
                     </div>
 
                     <div className="min-w-0">
-                      <p className="text-xs text-black/60 mb-0.5 font-bold">
+                      <p className="text-xs text-black/60 mb-1 font-bold">
                         {s.label}
                       </p>
 
-                      <p className="text-sm font-bold text-black hover:opacity-60 transition-opacity break-words">
+                      <p className="text-sm font-bold text-black break-words">
                         {s.value}
                       </p>
                     </div>
@@ -122,10 +138,13 @@ export default function Contact() {
               })}
             </div>
 
-            <div className="lg:col-span-3 min-w-0">
+            {/* Right Side */}
+            <div className="lg:col-span-3">
               <div className="bg-card rounded-lg p-5 md:p-8 h-full overflow-hidden">
+
                 {sent ? (
                   <div className="h-full flex flex-col items-center justify-center text-center py-12">
+
                     <div className="w-16 h-16 rounded-lg bg-black text-white flex items-center justify-center mb-4 text-2xl">
                       ✓
                     </div>
@@ -144,12 +163,18 @@ export default function Contact() {
                     >
                       Send another message
                     </button>
+
                   </div>
                 ) : (
+
                   <form onSubmit={handleSubmit} className="space-y-5">
-                    <h3 className="font-black mb-6">Send a message</h3>
+
+                    <h3 className="font-black mb-6">
+                      Send a message
+                    </h3>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
                       <div>
                         <label className="block text-xs font-bold text-black/60 mb-1.5 uppercase tracking-wide">
                           Your Name
@@ -159,9 +184,11 @@ export default function Contact() {
                           type="text"
                           required
                           value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          onChange={(e) =>
+                            setForm({ ...form, name: e.target.value })
+                          }
                           placeholder="John Doe"
-                          className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm text-black placeholder-black/40 outline-none transition-colors font-bold"
+                          className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm outline-none font-bold"
                         />
                       </div>
 
@@ -174,11 +201,14 @@ export default function Contact() {
                           type="email"
                           required
                           value={form.email}
-                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          onChange={(e) =>
+                            setForm({ ...form, email: e.target.value })
+                          }
                           placeholder="john@example.com"
-                          className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm text-black placeholder-black/40 outline-none transition-colors font-bold"
+                          className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm outline-none font-bold"
                         />
                       </div>
+
                     </div>
 
                     <div>
@@ -190,9 +220,11 @@ export default function Contact() {
                         required
                         rows={5}
                         value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        onChange={(e) =>
+                          setForm({ ...form, message: e.target.value })
+                        }
                         placeholder="Tell me about your project or opportunity..."
-                        className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm text-black placeholder-black/40 outline-none transition-colors resize-none font-bold"
+                        className="w-full bg-white border-2 border-black/10 focus:border-black rounded-lg px-4 py-3 text-sm outline-none resize-none font-bold"
                       />
                     </div>
 
@@ -203,12 +235,13 @@ export default function Contact() {
                       <Send size={15} />
                       Send Message
                     </button>
+
                   </form>
                 )}
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
     </section>
