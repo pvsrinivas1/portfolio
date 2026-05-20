@@ -52,7 +52,7 @@ export default function About() {
             Who I Am
           </h2>
           <p className="text-lg text-black/60 max-w-2xl mb-16">
-            A passionate ECE student dedicated to building the intersection of hardware and cloud security.
+           Aspiring Cloud & Cybersecurity Engineer focused on building secure, scalable cloud applications and modern infrastructure solutions..
           </p>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -63,8 +63,8 @@ export default function About() {
                   PV
                 </div>
                 <div>
-                  <h3 className="text-xl font-black">PV Srinivas</h3>
-                  <p className="text-sm text-black/60 font-bold">ECE Student & Developer</p>
+                  <h3 className="text-xl font-black">PV SRINIVAS</h3>
+                  <p className="text-sm text-black/60 font-bold">Cloud & Network Engineerr</p>
                 </div>
               </div>
 
