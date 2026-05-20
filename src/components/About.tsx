@@ -43,16 +43,19 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-start">
             <div className="space-y-6 min-w-0">
-              <div className="flex items-center gap-3 mb-8">
-                <img
-                  src={import.meta.env.BASE_URL + 'dp.jpeg'}
-                  alt="PV Srinivas"
-                  className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0"
-                />
+              {/* Profile Picture - Centered on Mobile, Left on Desktop */}
+              <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
+                <div className="flex justify-center md:justify-start">
+                  <img
+                    src={import.meta.env.BASE_URL + 'dp.jpeg'}
+                    alt="PV Srinivas"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black/10 shadow-lg"
+                  />
+                </div>
 
-                <div className="min-w-0">
-                  <h3 className="text-lg md:text-xl font-black break-words">PV SRINIVAS</h3>
-                  <p className="text-sm text-black/60 font-bold break-words">Cloud & Network Engineer</p>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-black break-words">PV SRINIVAS</h3>
+                  <p className="text-base md:text-lg text-black/60 font-bold break-words">Cloud & Network Engineer</p>
                 </div>
               </div>
 
@@ -70,7 +73,7 @@ export default function About() {
                 When I'm not coding, I'm exploring CTF challenges, cloud security, networking, and modern infrastructure.
               </p>
 
-              <div className="flex flex-wrap gap-2 pt-4">
+              <div className="flex flex-wrap gap-2 pt-4 justify-center md:justify-start">
                 {['Python', 'AWS', 'GCP', 'Linux', 'React', 'Network Security'].map((tag) => (
                   <span key={tag} className="px-3 py-1 rounded-lg bg-black/5 border border-black/10 text-black text-xs font-bold">
                     {tag}
