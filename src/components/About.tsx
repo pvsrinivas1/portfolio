@@ -47,7 +47,7 @@ export default function About() {
                 <img
                   src="/dp.jpeg"
                   alt="PV Srinivas"
-                  className="w-14 h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0"
+                  className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0"
                 />
 
                 <div className="min-w-0">
