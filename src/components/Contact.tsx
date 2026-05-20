@@ -54,7 +54,7 @@ export default function Contact() {
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
     );
 
-    window.location.href = `mailto:srinivaspv678@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:pvsrinivas@outlook.in?subject=${subject}&body=${body}`;
 
     setSent(true);
 
