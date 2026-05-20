@@ -25,12 +25,12 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 pt-28 pb-20 w-full">
         <div ref={ref} className="fade-in text-center">
           <p className="inline-block border border-black/20 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest mb-8">
-            ✓ Available for cloud computing & security roles
+            JUST A TECH 
           </p>
 
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-6">
             Hello I'm<br />
-            <span className="font-light">PV Srinivas</span>
+            <span className="font-bold">PV Srinivas</span>
           </h1>
 
           <p className="text-lg md:text-xl text-black/70 leading-relaxed mb-4 max-w-2xl mx-auto">
