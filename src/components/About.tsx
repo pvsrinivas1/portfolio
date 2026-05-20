@@ -46,12 +46,12 @@ export default function About() {
               {/* Profile Picture - Centered on Mobile, Left on Desktop */}
               <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8">
                 <div className="flex justify-center md:justify-start">
-                  <img
-                    src={import.meta.env.BASE_URL + 'dp.jpeg'}
-                    alt="PV Srinivas"
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black/10 shadow-lg"
-                  />
-                </div>
+  <img
+    src={import.meta.env.BASE_URL + 'dp.jpeg'}
+    alt="PV Srinivas"
+    className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-black/10 shadow-lg"
+  />
+</div>
 
                 <div className="text-center md:text-left">
                   <h3 className="text-2xl md:text-3xl font-black break-words">PV SRINIVAS</h3>
