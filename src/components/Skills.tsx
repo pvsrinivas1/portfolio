@@ -37,7 +37,18 @@ const categories = [
 ];
 
 const techStack = [
-  'Python', 'JavaScript', 'TypeScript', 'React', 'AWS', 'GCP', 'Linux', 'Docker', 'Git', 'Nmap', 'C/C++', 'Bash',
+  'Python',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'AWS',
+  'GCP',
+  'Linux',
+  'Docker',
+  'Git',
+  'Nmap',
+  'C/C++',
+  'Bash',
 ];
 
 export default function Skills() {
@@ -45,54 +56,79 @@ export default function Skills() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        }),
       { threshold: 0.1 }
     );
+
     if (ref.current) observer.observe(ref.current);
+
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="skills" className="py-28 px-6 border-t border-black/10">
+    <section
+      id="skills"
+      className="py-20 md:py-28 px-4 md:px-6 border-t border-black/10 overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto relative">
         <div ref={ref} className="fade-in">
-          <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-4">Technical Skills</p>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
+          <p className="text-xs font-bold uppercase tracking-widest text-black/60 mb-4">
+            Technical Skills
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight break-words">
             My Expertise
           </h2>
-          <p className="text-lg text-black/60 max-w-2xl mb-16">
+
+          <p className="text-base md:text-lg text-black/60 max-w-2xl mb-12 md:mb-16">
             A diverse set of tools and technologies I use to build and secure systems.
           </p>
 
-          {/* Tech stack pills */}
+          {/* Tech Stack */}
           <div className="flex flex-wrap gap-3 mb-14">
             {techStack.map((t) => (
               <div
                 key={t}
-                className="px-4 py-2 rounded-full bg-black/5 border border-black/10 text-sm font-bold text-black"
+                className="px-4 py-2 rounded-full bg-black/5 border border-black/10 text-sm font-bold text-black break-words"
               >
                 {t}
               </div>
             ))}
           </div>
 
-          {/* Skills by category */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {/* Skill Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {categories.map((cat) => (
-              <div key={cat.label} className="bg-card rounded-lg p-6 h-full">
+              <div
+                key={cat.label}
+                className="bg-card rounded-lg p-5 md:p-6 h-full overflow-hidden break-words"
+              >
                 <div className="flex items-center gap-2 mb-5">
-                  <div className="w-2 h-2 bg-black rounded-full" />
-                  <h3 className="text-sm font-black text-black uppercase tracking-wider">
+                  <div className="w-2 h-2 bg-black rounded-full shrink-0" />
+
+                  <h3 className="text-sm font-black text-black uppercase tracking-wider break-words">
                     {cat.label}
                   </h3>
                 </div>
+
                 <div className="space-y-4">
                   {cat.skills.map((skill) => (
                     <div key={skill.name}>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-bold text-black">{skill.name}</span>
-                        <span className="text-xs text-black/60 font-bold">{skill.level}%</span>
+                      <div className="flex items-center justify-between gap-3 mb-2">
+                        <span className="text-sm font-bold text-black break-words">
+                          {skill.name}
+                        </span>
+
+                        <span className="text-xs text-black/60 font-bold shrink-0">
+                          {skill.level}%
+                        </span>
                       </div>
+
                       <div className="h-2 bg-black/10 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-black rounded-full transition-all duration-1000"
@@ -107,6 +143,7 @@ export default function Skills() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
