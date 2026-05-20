@@ -45,7 +45,7 @@ export default function About() {
             <div className="space-y-6 min-w-0">
               <div className="flex items-center gap-3 mb-8">
                 <img
-                  src="/dp.jpeg"
+                  src={import.meta.env.BASE_URL + 'dp.jpeg'}
                   alt="PV Srinivas"
                   className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover shrink-0"
                 />
