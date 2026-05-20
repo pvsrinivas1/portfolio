@@ -6,7 +6,7 @@ const projects = [
     title: 'AI Voice Assistant',
     desc: 'Intelligent voice-activated assistant using NLP and speech recognition.',
     tags: ['Python', 'NLP', 'Speech Recognition', 'Google Cloud'],
-    github: 'https://github.com/pvsrinivas',
+    github: 'https://github.com/pvsrinivas1',
     live: '#',
     featured: true,
   },
@@ -14,7 +14,7 @@ const projects = [
     title: 'Cloud Security Dashboard',
     desc: 'Centralized monitoring dashboard for AWS/GCP environments.',
     tags: ['AWS', 'GCP', 'React', 'Security'],
-    github: 'https://github.com/pvsrinivas',
+    github: 'https://github.com/pvsrinivas1',
     live: '#',
     featured: true,
   },
@@ -22,7 +22,7 @@ const projects = [
     title: 'Password Strength Analyzer',
     desc: 'Advanced password security tool with entropy analysis.',
     tags: ['Python', 'Security', 'Cryptography'],
-    github: 'https://github.com/pvsrinivas',
+    github: 'https://github.com/pvsrinivas1',
     live: '#',
     featured: true,
   },
@@ -30,7 +30,7 @@ const projects = [
     title: 'Network Scanner',
     desc: 'Network reconnaissance tool for subnet and port scanning.',
     tags: ['Python', 'Networking', 'Nmap'],
-    github: 'https://github.com/pvsrinivas',
+    github: 'https://github.com/pvsrinivas1',
     live: '#',
     featured: false,
   },
@@ -38,7 +38,7 @@ const projects = [
     title: 'Portfolio Website',
     desc: 'Portfolio built using React, Vite, and Tailwind CSS.',
     tags: ['React', 'Vite', 'Tailwind'],
-    github: 'https://github.com/pvsrinivas',
+    github: 'https://github.com/pvsrinivas1',
     live: '#',
     featured: false,
   },
@@ -181,7 +181,7 @@ export default function Projects() {
 
           <div className="mt-12 text-center">
             <a
-              href="https://github.com/pvsrinivas"
+              href="https://github.com/pvsrinivas1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex flex-wrap items-center justify-center gap-2 px-5 md:px-6 py-3 rounded-lg border-2 border-black text-black font-bold text-sm hover:bg-black hover:text-white transition-all"
