@@ -44,9 +44,11 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-start">
             <div className="space-y-6 min-w-0">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-lg bg-black text-white flex items-center justify-center text-xl font-black shrink-0">
-                  PV
-                </div>
+                <img
+                  src="/dp.jpeg"
+                  alt="PV Srinivas"
+                  className="w-14 h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0"
+                />
 
                 <div className="min-w-0">
                   <h3 className="text-lg md:text-xl font-black break-words">PV SRINIVAS</h3>
