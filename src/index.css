@@ -6,6 +6,12 @@
 
 * {
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -14,20 +20,35 @@ body {
   color: #000000;
 }
 
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 @layer utilities {
+
   .bg-card {
     background: rgba(0, 0, 0, 0.02);
     border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(0);
+    will-change: auto;
   }
 
   .bg-card-hover {
-    transition: all 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      opacity 0.3s ease;
   }
 
+  /* FIXED MOBILE GLITCH */
   .bg-card-hover:hover {
     background: rgba(0, 0, 0, 0.04);
     border-color: rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
   }
 }
 
@@ -51,15 +72,26 @@ body {
   width: 100%;
 }
 
+/* FIXED SCROLL ANIMATION */
 .fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* REMOVE MOBILE RENDER GLITCH */
+@media (min-width: 768px) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s ease,
+      transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 ::-webkit-scrollbar {
