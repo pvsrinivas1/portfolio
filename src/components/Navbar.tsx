@@ -25,10 +25,6 @@ export default function Navbar({ scrolled }: NavbarProps) {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="#" className="text-black font-black text-xl tracking-tight">
-          PV<span className="font-light">.Srinivas</span>
-        </a>
-
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
